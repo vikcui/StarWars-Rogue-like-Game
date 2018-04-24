@@ -8,18 +8,24 @@ YANG CUI  27346919
 Work BreakDown:
 YANG CUI  27346919 will be responsible for the UML models, Sequence diagrams of the first three project requirments that includes: Leave Affordace, Force and Lightsaber.
 
+
 JACK HO            will be responsible for testing and reviewing the  UML models, Sequence diagrams of the first three project requirments that includes: Leave Affordace, Force and Lightsaber.
 
+
 JACK HO           will be responsible for the UML models, Sequence diagrams of the last two project requirments that includes: Ben Kenobi and Droids.
+
 
 YANG CUI  27346919 will be responsible for testing and reviewing the the UML models, Sequence diagrams of the last two project requirments that includes: Ben Kenobi and Droids.
 
 
 YANG CUI 27346919 will be responsible for the first three requirements of the rationale.
 
+
 JACK HO           will be responsible for the last two requirements of the rationale.
 
+
 YANG CUI and JACK HO will both be responsible for the currentness of versions on master for this assignment.
+
 
 YANG CUI and JACK HO will make sure the everything is in its current version and final version is there by the due date April 29th.
 
