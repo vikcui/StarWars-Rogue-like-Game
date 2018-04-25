@@ -3,8 +3,11 @@ This is the official Work Breakdown Agreement of Assignment 1.
 Group Member:
 YANG CUI  27346919
 
+<<<<<<< HEAD
 Group Member:
 KA PO HO 26989433
+=======
+>>>>>>> master
 
 
 Work BreakDown:
