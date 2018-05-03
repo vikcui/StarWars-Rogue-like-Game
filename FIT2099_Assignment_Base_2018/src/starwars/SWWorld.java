@@ -119,6 +119,13 @@ public class SWWorld extends World {
 		entityManager.setLocation(luke, loc);
 		luke.resetMoveCommands(loc);
 		
+		Droid droidno1 = new Droid(Team.GOOD, 100, iface, this);
+		droidno1.setOwner(luke);
+		droidno1.setSymbol("D");
+		droidno1.setShortDescription("Droidno1");
+		loc = myGrid.getLocationByCoordinates(3,3);
+		entityManager.setLocation(droidno1, loc);
+		
 		
 		// Beggar's Canyon 
 		for (int col = 3; col < 8; col++) {
