@@ -287,7 +287,7 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	 * @return true if the amount of force is greater than or equal to 8 out of 10.
 	 */
 	public boolean canUseForce(){  //?
-		return this.force >= 8;
+		return this.force >= this.strongforce;
 		
 	}
 	/**This method is a accessor for the force attribute 

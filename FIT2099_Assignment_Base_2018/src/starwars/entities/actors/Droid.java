@@ -1,13 +1,10 @@
 package starwars.entities.actors;
 
-import java.util.ArrayList;
-import java.util.Random;
+
 
 import edu.monash.fit2099.gridworld.Grid;
-import edu.monash.fit2099.gridworld.Grid.CompassBearing;
 import edu.monash.fit2099.simulator.matter.EntityManager;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
-import starwars.RandomDirection;
 import starwars.SWActor;
 import starwars.SWEntityInterface;
 import starwars.SWLocation;
