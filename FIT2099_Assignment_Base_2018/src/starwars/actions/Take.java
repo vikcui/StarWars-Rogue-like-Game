@@ -52,11 +52,13 @@ public class Take extends SWAffordance {
 	/**
 	 * Perform the <code>Take</code> action by setting the item carried by the <code>SWActor</code> to the target (
 	 * the <code>SWActor a</code>'s item carried would be the target of this <code>Take</code>).
+	 * Then remove the </code>Take</code> affordance from the target and add </code>Leave</code> affordance to
+	 * the target because it should be left at some point.
 	 * <p>
 	 * This method should only be called if the <code>SWActor a</code> is alive.
 	 * 
 	 * @author 	ram
-	 * @author 	Asel (26/01/2017)
+	 * @author 	Yang Cui (06/05/2018)
 	 * @param 	a the <code>SWActor</code> that is taking the target
 	 * @see 	{@link #theTarget}
 	 * @see		{@link starwars.SWActor#isDead()}
