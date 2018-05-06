@@ -13,7 +13,7 @@ import starwars.SWEntityInterface;
  */
 /*
  * Changelog
- * 2017/01/26	- candDo method changed. An actor can only leave if it's currently holding something already.
+ * 2018/05/06	- candDo method changed. An actor can only leave if it's currently holding something already.
  * 				- act method modified. Leave affordance appeared from the item picked up, since an item picked up
  * 				  cannot be taken. This is just a safe guard.
  * 				- canDo method changed to return true only if the actor is  carrying an item (asel)
