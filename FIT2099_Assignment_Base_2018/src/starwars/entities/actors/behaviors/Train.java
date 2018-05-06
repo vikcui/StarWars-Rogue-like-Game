@@ -8,7 +8,7 @@ import starwars.SWLocation;
 import starwars.SWWorld;
 import starwars.entities.actors.Player;
 /** a new class train in the package starwars.entities.actors.behaviors. 
- *  The Train class is a behavior of a actor, and in star world, the class will focus more on the training that Ben do to Luke,
+ *  Train is a behavior of a actor, and in star world, this class will focus more on the training that Ben do to Luke,
  *  The class contains its constructor and a new function TrainLuke
  *  And it has two attributes in the Train class, one is SWActor actor and the other one is SWWorld world.
  * 	@author CUIYANG and Ka Po Ho

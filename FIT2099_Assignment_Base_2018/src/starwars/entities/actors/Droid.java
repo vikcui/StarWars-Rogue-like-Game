@@ -1,7 +1,6 @@
 package starwars.entities.actors;
 
 
-
 import edu.monash.fit2099.gridworld.Grid;
 import edu.monash.fit2099.simulator.matter.EntityManager;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
@@ -12,6 +11,14 @@ import starwars.SWWorld;
 import starwars.Team;
 import starwars.actions.Move;
 import starwars.entities.actors.behaviors.DroidMove;
+
+
+/**
+ * A new class Droid in the package starwars.entites.actors
+ * The 
+ * @author KaPoHo and CuiYang
+ *
+ */
 
 public class Droid extends SWActor {
 	private SWActor owner = null;
