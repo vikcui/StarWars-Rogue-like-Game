@@ -2,7 +2,6 @@ package starwars.entities.actors;
 
 import edu.monash.fit2099.simulator.space.Direction;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
-import starwars.Force;
 import starwars.SWLegend;
 import starwars.SWWorld;
 import starwars.Team;
@@ -35,7 +34,7 @@ public class BenKenobi extends SWLegend {
 		this.setLongDescription("Ben Kenobi, an old man who has perhaps seen too much");
 		LightSaber bensweapon = new LightSaber(m);
 		setItemCarried(bensweapon);
-		this.forcestate=Force.Strong;
+		this.force=10;
 	}
 
 	public static BenKenobi getBenKenobi(MessageRenderer m, SWWorld world, Direction [] moves) {

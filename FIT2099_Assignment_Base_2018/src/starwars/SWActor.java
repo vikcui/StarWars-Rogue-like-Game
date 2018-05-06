@@ -56,6 +56,12 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	/**A amount of force of this <code>SWActor</code>. The value ranges over[0,10]. 8 means that <code>SWActor</code> 
 	 * is able to use the force*/
 	protected int force=0;
+	/**A constanct int attribute that represents full force(biggest value) for a given <code>SWActor</code> 
+	 */
+	protected final int fullforce=10;
+	/**A constanct int attribute that represents strong force(biggest value) for a given <code>SWActor</code> 
+	 */
+	protected final int strongforce=8;
 	
 	/**
 	 * Constructor for the <code>SWActor</code>.
@@ -297,6 +303,20 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	 */
 	public void setForcestate(int f){
 		this.force = f;
+	}
+	/**This method is a accessor for the constant force attribute fullforce
+	 * 
+	 * @return constant force attribute fullforce
+	 */
+	public int getFullForce(){
+		return this.fullforce;
+	}
+	/**This method is a accessor for the constant force attribute strongforce
+	 * 
+	 * @return the constant force attribute strongforce
+	 */
+	public int getStrongForce(){
+		return this.strongforce;
 	}
 
 

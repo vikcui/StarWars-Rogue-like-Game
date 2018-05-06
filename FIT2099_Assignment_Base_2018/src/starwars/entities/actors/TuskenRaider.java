@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import edu.monash.fit2099.gridworld.Grid;
 import edu.monash.fit2099.simulator.space.Direction;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
-import starwars.Force;
 import starwars.SWActor;
 import starwars.SWLocation;
 import starwars.SWWorld;
@@ -42,7 +41,7 @@ public class TuskenRaider extends SWActor {
 		super(Team.TUSKEN, 50, m, world);
 		// TODO Auto-generated constructor stub
 		this.name = name;
-		this.forcestate=Force.Strong;
+		this.force=10;
 	}
 
 	@Override

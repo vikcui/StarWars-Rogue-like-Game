@@ -3,7 +3,6 @@ package starwars.entities.actors.behaviors;
 import java.util.List;
 
 import edu.monash.fit2099.simulator.matter.EntityManager;
-import starwars.Force;
 import starwars.SWActor;
 import starwars.SWEntityInterface;
 import starwars.SWLocation;
@@ -26,8 +25,8 @@ public class Train {
 		
 		for (SWEntityInterface e : entities){
 			if(e != a && e instanceof Player){
-				if(((Player) e).getForcestate() != Force.Strong){
-					((Player) e).setForcestate(Force.Strong);
+				if(((Player) e).getForcestate()<((Player) e).getStrongForce() ){
+					((Player) e).setForcestate(((Player) e).getFullForce());
 					a.say("Ben says: After trainning, the force ability of luke becomes strong and he is able to take the lightsaber !");
 					a.say("Luke's forcestate: "+(((Player) e).getForcestate()));
 				}
