@@ -53,8 +53,9 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	/**A set of <code>Capabilities</code> of this <code>SWActor</code>*/
 	private HashSet<Capability> capabilities;
 	
-	/**A state of <code>Force</code> of this <code>SWActor</code>*/
-	protected Force forcestate=Force.None;
+	/**A amount of force of this <code>SWActor</code>. The value ranges over[0,10]. 8 means that <code>SWActor</code> 
+	 * is able to use the force*/
+	protected int force=0;
 	
 	/**
 	 * Constructor for the <code>SWActor</code>.
@@ -274,16 +275,28 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		// TODO: This assumes that the only actions are the Move actions. This will clobber any others. Needs to be fixed.
 		/* Actually, that's not the case: all non-movement actions are transferred to newActions before the movements are transferred. --ram */
 	}
+	/**This method helps determine if a given </code>SWActor</code> is able to use the force.
+	 * 
+	 * 
+	 * @return true if the amount of force is greater than or equal to 8 out of 10.
+	 */
 	public boolean canUseForce(){  //?
-		return forcestate.equals("Strong");
+		return this.force >= 8;
 		
 	}
-	public Force getForcestate(){
-		return forcestate;
+	/**This method is a accessor for the force attribute 
+	 * 
+	 * @return an int value representing the  amount of force of a given </code>SWActor</code>
+	 */
+	public int getForcestate(){
+		return this.force;
 	}
-	
-	public void setForcestate(Force f){
-		this.forcestate = f;
+	/**This method is a mutator for the force attribute
+	 * 
+	 * @param f an given int value representing the  amount of force of a given </code>SWActor</code>
+	 */
+	public void setForcestate(int f){
+		this.force = f;
 	}
 
 
