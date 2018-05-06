@@ -7,6 +7,8 @@ import starwars.SWActor;
 import starwars.SWAffordance;
 import starwars.SWEntityInterface;
 import starwars.entities.LightSaber;
+import starwars.entities.actors.BenKenobi;
+import starwars.entities.actors.TuskenRaider;
 
 /**
  * Command to attack entities.
@@ -113,13 +115,20 @@ public class Attack extends SWAffordance implements SWActionInterface {
 			|| (targetIsActor && (a.getTeam() != targetActor.getTeam()))) {  // others will only attack actors on different teams
 				
 			a.say(a.getShortDescription() + " is attacking " + target.getShortDescription() + "!");
+			
 			boolean canWieldLightSaber=a.canUseForce();
 			boolean isLightSaber=a.getItemCarried() instanceof LightSaber;
+			
 			SWEntityInterface itemCarried = a.getItemCarried();
 			if (itemCarried != null) {//if the actor is carrying an item 
 				if ((itemCarried.hasCapability(Capability.WEAPON)&&(!isLightSaber))||(itemCarried.hasCapability(Capability.WEAPON)&&isLightSaber&&canWieldLightSaber)) {
 					target.takeDamage(itemCarried.getHitpoints() + 1); // blunt weapon won't do much, but it will still do some damage
 					itemCarried.takeDamage(1); // weapon gets blunt
+					if (isLightSaber&&canWieldLightSaber){
+						if (!(a instanceof BenKenobi|| a instanceof TuskenRaider)){
+							a.setForcestate(a.getForcestate()-1);// force get used and reduced
+						}
+					}
 					a.takeDamage(energyForAttackWithWeapon); // actor uses energy to attack
 				}
 				else {//an attack with a none weapon
