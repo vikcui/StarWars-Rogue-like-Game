@@ -1,7 +1,6 @@
 package starwars.entities.actors.behaviors;
 
 import java.util.ArrayList;
-import java.util.Random;
 import edu.monash.fit2099.gridworld.Grid;
 import edu.monash.fit2099.gridworld.Grid.CompassBearing;
 import edu.monash.fit2099.simulator.space.Direction;
@@ -28,10 +27,9 @@ public class DroidMove {
 	}
 	public CompassBearing getNext(Droid d){
 		if (moves.size()==0){
-			Random rand = new Random();
-			int randNum = rand.nextInt(8)+1;
+			
 			RandomDirection rd = new RandomDirection();
-			Grid.CompassBearing nextRD = rd.convertNumCompass(randNum);
+			Grid.CompassBearing nextRD = rd.convertNumCompass();
 			for(int i=0;i<maxLength;i++){
 				this.moves.add(nextRD);
 			}	
@@ -40,10 +38,8 @@ public class DroidMove {
 		while (!(this.myWorld.getEntityManager().seesExit(d,this.moves.get(position)))){
 			this.moves.clear();
 			this.position=0;
-			Random rand = new Random();
-			int randNum = rand.nextInt(8)+1;
 			RandomDirection rd = new RandomDirection();
-			Grid.CompassBearing nextRD = rd.convertNumCompass(randNum);
+			Grid.CompassBearing nextRD = rd.convertNumCompass();
 			for(int i=0;i<maxLength;i++){
 				this.moves.add(nextRD);
 			}	

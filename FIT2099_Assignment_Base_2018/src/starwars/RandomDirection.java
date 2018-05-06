@@ -7,10 +7,12 @@ import edu.monash.fit2099.gridworld.Grid.CompassBearing;
 
 
 public class RandomDirection {
+	private Random rand = new Random();
+	private int randNum = rand.nextInt(8)+1;
 	CompassBearing d;
 		
-	public CompassBearing convertNumCompass(int Num){
-	switch(Num){
+	public CompassBearing convertNumCompass(){
+	switch(randNum){
 		case 1:
 			d = Grid.CompassBearing.NORTH;
 			break;
