@@ -24,7 +24,7 @@ public class Leave extends SWAffordance {
 	 * Constructor for the <code>Take</code> Class. Will initialize the message renderer, the target and 
 	 * set the priority of this <code>Action</code> to 1 (lowest priority is 0).
 	 * 
-	 * @param theTarget a <code>SWEntity</code> that is being taken
+	 * @param theTarget a <code>SWEntity</code> that is being left
 	 * @param m the message renderer to display messages
 	 */
 	public Leave(SWEntityInterface theTarget, MessageRenderer m) {
@@ -39,7 +39,7 @@ public class Leave extends SWAffordance {
 	 * This method returns true if and only if <code>a</code> is not carrying any item already.
 	 *  
 	 * @author 	ram
-	 * @author 	Asel (26/01/2017)
+	 * @author 	Yang Cui (06/05/2018)
 	 * @param 	a the <code>SWActor</code> being queried
 	 * @return 	true if the <code>SWActor</code> is can take this item, false otherwise
 	 * @see		{@link starwars.SWActor#getItemCarried()}
@@ -50,14 +50,17 @@ public class Leave extends SWAffordance {
 	}
 
 	/**
-	 * Perform the <code>Leave</code> action by setting the item carried by the <code>SWActor</code> to the target (
-	 * the <code>SWActor a</code>'s item carried would be the target of this <code>Leave</code>).
+	 * Perform the <code>Leave</code> action by setting the item carried by the <code>SWActor</code> to the None (
+	 * the <code>SWActor a</code>'s item carried would be the target of this <code>Leave</code> and the target would be
+	 * appear on the location of where the <code>SWActor</code> is).
+	 * Then remove the </code>Leave</code> affordance and add </code>Take</code> affordance to
+	 * the target because it should be able to be picked up again.
 	 * <p>
 	 * This method should only be called if the <code>SWActor a</code> is alive.
 	 * 
 	 * @author 	ram
-	 * @author 	Asel (26/01/2017)
-	 * @param 	a the <code>SWActor</code> that is taking the target
+	 * @author 	Yang Cui (06/05/2018)
+	 * @param 	a the <code>SWActor</code> that is leaving the target
 	 * @see 	{@link #theTarget}
 	 * @see		{@link starwars.SWActor#isDead()}
 	 */
