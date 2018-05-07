@@ -87,12 +87,6 @@ public class Droid extends SWActor {
 				}
 			}
 			if (!isNear){
-//				ArrayList<CompassBearing> moves=new ArrayList<CompassBearing>();
-//				Random rand = new Random();
-//				int randNum = rand.nextInt(8)+1;
-//				RandomDirection rd = new RandomDirection();
-//				Grid.CompassBearing nextRD = rd.convertNumCompass(randNum);
-//				this.say("compass "+nextRD);
 				Grid.CompassBearing nextRD=newDroidMove.getNext(this);
 				Move dMove2 = new Move(nextRD,this.messageRenderer,this.world);
 				this.scheduler.schedule(dMove2, this, dMove2.getDuration());
