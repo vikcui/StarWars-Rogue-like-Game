@@ -48,16 +48,7 @@ public class DroidMove {
 		position++;
 		return nextMove;
 			
-			
-//			this.moves.clear();
-//			
-//			Random rand = new Random();
-//			int randNum = rand.nextInt(8)+1;
-//			RandomDirection rd = new RandomDirection();
-//			Grid.CompassBearing nextRD = rd.convertNumCompass(randNum);
-//			if(this.myWorld.getEntityManager().seesExit(d,nextRD)){
-//				Move dMove2 = new Move(nextRD,this.messageRenderer,this.world);
-//				this.scheduler.schedule(dMove2, this, dMove2.getDuration());
+	
 		}
 		
 		
