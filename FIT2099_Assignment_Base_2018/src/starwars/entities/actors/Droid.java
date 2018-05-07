@@ -70,6 +70,9 @@ public class Droid extends SWActor {
 	 */
 	@Override
 	public void act() {
+		if (this.getHitpoints()<=0){
+			return;
+		}
 		if(this.owner !=null){
 			if(em.whereIs(this) == em.whereIs(this.owner)){
 				return ;
@@ -100,6 +103,7 @@ public class Droid extends SWActor {
 		else{
 			return;
 		}
+		this.moveInBadlands(em.whereIs(this));
 		
 	}
 	
