@@ -10,7 +10,7 @@ import starwars.SWLocation;
 import starwars.SWWorld;
 import starwars.Team;
 import starwars.actions.Move;
-import starwars.entities.actors.behaviors.DroidMove;
+import starwars.entities.actors.behaviors.RandomDroidMove;
 
 
 /*
@@ -31,7 +31,7 @@ public class Droid extends SWActor {
 	
 	private SWActor owner = null;
 	protected EntityManager<SWEntityInterface, SWLocation> em;
-	private DroidMove newDroidMove;
+	private RandomDroidMove newRandomDroidMove;
 	
 	/**
 	 * A constructor with four arguments to instantiate a new Droid object, as it inherits from SWActor, it can use its parent's constructor(super()) to initialize their common attributes.
@@ -43,7 +43,7 @@ public class Droid extends SWActor {
 	public Droid(Team team, int hitpoints, MessageRenderer m, SWWorld world) {
 		super(team, hitpoints, m, world);
 		this.em = world.getEntitymanager();
-		this.newDroidMove=new DroidMove(this.world);
+		this.newRandomDroidMove=new RandomDroidMove(this.world);
 	}
 
 	
@@ -79,7 +79,7 @@ public class Droid extends SWActor {
 			}
 			boolean isNear=false;
 			for(Grid.CompassBearing d: Grid.CompassBearing.values()){
-				if(em.whereIs(this).getNeighbour(d) == em.whereIs(owner)){
+				if(em.whereIs(this).getNeighbour(d) == em.whereIs(this.owner)){
 					isNear=true;
 					Move dMove1 = new Move(d,this.messageRenderer,this.world);
 					this.scheduler.schedule(dMove1, this, dMove1.getDuration());
@@ -87,7 +87,7 @@ public class Droid extends SWActor {
 				}
 			}
 			if (!isNear){
-				Grid.CompassBearing nextRD=newDroidMove.getNext(this);
+				Grid.CompassBearing nextRD=newRandomDroidMove.getNext(this);
 				Move dMove2 = new Move(nextRD,this.messageRenderer,this.world);
 				this.scheduler.schedule(dMove2, this, dMove2.getDuration());
 				return;
@@ -132,4 +132,7 @@ public class Droid extends SWActor {
 		}
 		
 	}
+
+
+
 }

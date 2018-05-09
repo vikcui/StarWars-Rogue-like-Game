@@ -3,8 +3,11 @@ package starwars.entities.actors.behaviors;
 import java.util.ArrayList;
 import edu.monash.fit2099.gridworld.Grid;
 import edu.monash.fit2099.gridworld.Grid.CompassBearing;
+import edu.monash.fit2099.simulator.matter.EntityManager;
 import edu.monash.fit2099.simulator.space.Direction;
 import starwars.RandomDirection;
+import starwars.SWEntityInterface;
+import starwars.SWLocation;
 import starwars.SWWorld;
 import starwars.actions.Move;
 import starwars.entities.actors.Droid;
@@ -16,7 +19,7 @@ import starwars.entities.actors.Droid;
  * @author kapoho and cuiyang
  *
  */
-public class DroidMove {
+public class RandomDroidMove {
 	/**
 	 * there are four attributes in the class:
 	 * 1. myWord is a instance of SWWorld.
@@ -30,13 +33,14 @@ public class DroidMove {
 	private int maxLength;
 	private ArrayList<CompassBearing> moves;
 	private int position = 0;
+
 	
 	/**
 	 * The constructor with one argument to instantiate a new DroidMove object
 	 * it initializes the key attributes of the Droid move class.
 	 * @param  </code>world </code>, a word object of SWWordld to represent the position of Droid in the world.
 	 */
-	public DroidMove(SWWorld world){
+	public RandomDroidMove(SWWorld world){
 		this.myWorld=world;
 		this.maxLength=Math.max(myWorld.height(), myWorld.width());
 //		for(int i=0;i<maxLength;i++){
@@ -55,6 +59,7 @@ public class DroidMove {
 	 * @return the next direction that the droid needs to move.
 	 */
 	public CompassBearing getNext(Droid d){
+
 		if (moves.size()==0){
 			
 			RandomDirection rd = new RandomDirection();
