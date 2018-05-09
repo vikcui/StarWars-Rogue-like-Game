@@ -13,7 +13,7 @@ import starwars.actions.Move;
 import starwars.entities.actors.behaviors.DroidMove;
 
 
-/**
+/*
  * A new class Droid in the package starwars.entites.actors
  * The Droid is one of the actor belongs to SWWorld, so it should be in the actor package and extend form SWActor.
  * There are three attributes inside the class: Owner::SWActor, em::EntityManager<SWEntityInterface, SWLocation>, newDroidMove::DroidMove
