@@ -1,0 +1,5 @@
+For feature 2 force ability:
+The original design of it is to create a enum force class to set the forcestate for each star world actors,
+however, we think this approach may increase the depencies of the codes, as everytime we need to set the force or retrive a particular forcestate, we need to import the force enum class, which makes all the swactors depend on the force enum class. Also, this approach would need a lot of repeated code to fullfill its functionality, this will break the dry rule.
+Therefore, we decide to represent the force as a integer attribute, and we use two constant final integers attributes to represent two forcestates (fullforce, strongforce) instead of using the actual figure (In the train class). Also, we use every forcestate below 8 is weak force (all swactors(luke) with weak force is waited to be trained )
+Player has been set to 2 originally, Ben and TuskenRaider have been set to 10.
