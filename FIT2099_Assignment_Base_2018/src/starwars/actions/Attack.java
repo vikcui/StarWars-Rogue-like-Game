@@ -161,7 +161,6 @@ public class Attack extends SWAffordance implements SWActionInterface {
 			}
 			if (this.getTarget().getHitpoints() <= 0) {  // can't use isDead(), as we don't know that the target is an actor
 				target.setLongDescription(target.getLongDescription() + ", that was killed in a fight");
-//				a.say(target.getLongDescription());
 				//remove the attack affordance of the dead actor so it can no longer be attacked
 				targetActor.removeAffordance(this);
 
