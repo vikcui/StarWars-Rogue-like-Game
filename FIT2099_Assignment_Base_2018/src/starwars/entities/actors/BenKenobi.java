@@ -10,6 +10,7 @@ import starwars.entities.LightSaber;
 import starwars.entities.actors.behaviors.AttackInformation;
 import starwars.entities.actors.behaviors.AttackNeighbours;
 import starwars.entities.actors.behaviors.Patrol;
+import starwars.entities.actors.behaviors.Train;
 
 /**
  * Ben (aka Obe-Wan) Kenobi.  
@@ -49,6 +50,9 @@ public class BenKenobi extends SWLegend {
 		if(isDead()) {
 			return;
 		}
+		Train train = new Train(ben,ben.world);
+		
+		train.TrainLuke(ben, ben.world);
 		
 		AttackInformation attack;
 		attack = AttackNeighbours.attackLocals(ben,  ben.world, true, true);

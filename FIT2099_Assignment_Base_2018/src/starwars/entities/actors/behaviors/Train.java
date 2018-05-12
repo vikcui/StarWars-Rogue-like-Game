@@ -44,7 +44,7 @@ public class Train {
 		
 		for (SWEntityInterface e : entities){
 			if(e != a && e instanceof Player){
-				if(((Player) e).getForcestate()<((Player) e).getStrongForce() ){
+				if(((Player) e).getForcestate()<((Player) e).getStrongForce()){
 					((Player) e).setForcestate(((Player) e).getFullForce());
 					a.say("Ben says: After trainning, the force ability of luke becomes strong and he is able to take the lightsaber !");
 					a.say("Luke's forcestate: "+(((Player) e).getForcestate()));

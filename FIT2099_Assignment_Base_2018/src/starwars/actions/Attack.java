@@ -123,7 +123,8 @@ public class Attack extends SWAffordance implements SWActionInterface {
 			if (itemCarried != null) {//if the actor is carrying an item 
 				if ((itemCarried.hasCapability(Capability.WEAPON)&&(!isLightSaber))||(itemCarried.hasCapability(Capability.WEAPON)&&isLightSaber&&canWieldLightSaber)) {
 					target.takeDamage(itemCarried.getHitpoints() + 1); // blunt weapon won't do much, but it will still do some damage
-					itemCarried.takeDamage(1); // weapon gets blunt
+					itemCarried.takeDamage(1); 					// weapon gets blunt
+					
 					if (isLightSaber&&canWieldLightSaber){
 						if (!(a instanceof BenKenobi|| a instanceof TuskenRaider)){
 							a.setForcestate(a.getForcestate()-1);// force get used and reduced
@@ -160,7 +161,7 @@ public class Attack extends SWAffordance implements SWActionInterface {
 			}
 			if (this.getTarget().getHitpoints() <= 0) {  // can't use isDead(), as we don't know that the target is an actor
 				target.setLongDescription(target.getLongDescription() + ", that was killed in a fight");
-							
+//				a.say(target.getLongDescription());
 				//remove the attack affordance of the dead actor so it can no longer be attacked
 				targetActor.removeAffordance(this);
 
