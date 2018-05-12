@@ -72,7 +72,9 @@ public class Droid extends SWActor {
 	public void act() {
 		if (this.getHitpoints()<=0){
 			return;
+			
 		}
+		this.moveInBadlands(em.whereIs(this));
 		if(this.owner !=null){
 			if(em.whereIs(this) == em.whereIs(this.owner)){
 				return ;
@@ -97,7 +99,7 @@ public class Droid extends SWActor {
 		else{
 			return;
 		}
-		this.moveInBadlands(em.whereIs(this));
+		
 		
 	}
 	
@@ -127,9 +129,10 @@ public class Droid extends SWActor {
 	 * @param loc, a new instance of SWLocation, used to get the symbol of droid object's current position.
 	 */
 	public void moveInBadlands(SWLocation loc){
-		if (loc.getSymbol() =='b'){
+		if(loc.getSymbol()==('b'))
 			this.takeDamage(2);
-		}
+			this.say("loc: " +loc.getSymbol() + " "+ this.getSymbol() +" hitpoints: "+this.getHitpoints());
+	
 		
 	}
 

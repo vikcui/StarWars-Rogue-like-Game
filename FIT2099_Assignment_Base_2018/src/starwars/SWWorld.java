@@ -118,13 +118,19 @@ public class SWWorld extends World {
 		luke.setShortDescription("Luke");
 		entityManager.setLocation(luke, loc);
 		luke.resetMoveCommands(loc);
-		
+		//Droid1
 		Droid droidno1 = new Droid(Team.GOOD, 100, iface, this);
 		droidno1.setOwner(luke);
-		droidno1.setSymbol("D");
+		droidno1.setSymbol("D1");
 		droidno1.setShortDescription("Droidno1");
 		loc = myGrid.getLocationByCoordinates(3,3);
 		entityManager.setLocation(droidno1, loc);
+		//Droid2
+		Droid droidno2 = new Droid(Team.GOOD, 100, iface, this);
+		droidno2.setSymbol("D2");
+		droidno2.setShortDescription("Droidno1");
+		loc = myGrid.getLocationByCoordinates(2,2);
+		entityManager.setLocation(droidno2, loc);
 		
 		
 		// Beggar's Canyon 
