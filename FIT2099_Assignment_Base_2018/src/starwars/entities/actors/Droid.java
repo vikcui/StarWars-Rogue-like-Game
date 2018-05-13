@@ -69,6 +69,7 @@ public class Droid extends SWActor {
 	 * If the droid can no longer move in its current direction, then we randomly pick a direction again and keep moving in this direction. We repeat this process until the droid find its owner.
 	 * 
 	 * For the droid without owner, it should not move, and we should use return to stop its action.
+	 * The droid is also allowed to be adopted by the player if they are in the same location. (a adopt addfordance is added correspondly)
 	 */
 	@Override
 	public void act() {
