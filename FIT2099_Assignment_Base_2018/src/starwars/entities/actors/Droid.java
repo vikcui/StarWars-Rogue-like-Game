@@ -70,6 +70,7 @@ public class Droid extends SWActor {
 	 * 
 	 * For the droid without owner, it should not move, and we should use return to stop its action.
 	 * The droid is also allowed to be adopted by the player if they are in the same location. (a adopt addfordance is added correspondly)
+	 * The adopt affordance will not be added if the adopt affordance has been added for droid before, as the droid can not be adopted if it has a owner already.
 	 */
 	@Override
 	public void act() {
