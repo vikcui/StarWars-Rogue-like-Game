@@ -2,6 +2,7 @@ package starwars.entities.actors;
 
 
 import edu.monash.fit2099.gridworld.Grid;
+import edu.monash.fit2099.simulator.matter.Affordance;
 import edu.monash.fit2099.simulator.matter.EntityManager;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.SWActor;
@@ -9,6 +10,7 @@ import starwars.SWEntityInterface;
 import starwars.SWLocation;
 import starwars.SWWorld;
 import starwars.Team;
+import starwars.actions.Adopt;
 import starwars.actions.Move;
 import starwars.entities.actors.behaviors.RandomDroidMove;
 
@@ -97,6 +99,18 @@ public class Droid extends SWActor {
 					
 		}
 		else{
+			boolean alreadyHasAdoptAffordance=false;
+			Affordance Array[]=this.getAffordances();
+			for (int i=0;i<Array.length;i++){
+				if (Array[i] instanceof Adopt){
+					alreadyHasAdoptAffordance=true;
+					
+				}
+				
+			}
+			if (alreadyHasAdoptAffordance==false){
+				this.addAffordance(new Adopt(this,this.messageRenderer));
+			}
 			return;
 		}
 		
@@ -111,6 +125,18 @@ public class Droid extends SWActor {
 	public void setOwner(SWActor a){
 		this.owner = a;
 	}
+	
+	/**
+	 * A getter for Droid's owner.
+	 * @return 
+	 * @returns  </code>SWActor </code>, the owner of a droid.
+	 */
+	
+	public SWActor getOwner(){
+		return this.owner;
+	}
+	
+	
 
 	/**
 	 * A method that override from its parent class, return type is void.

@@ -128,7 +128,7 @@ public class SWWorld extends World {
 		//Droid2
 		Droid droidno2 = new Droid(Team.GOOD, 100, iface, this);
 		droidno2.setSymbol("D2");
-		droidno2.setShortDescription("Droidno1");
+		droidno2.setShortDescription("Droidno2");
 		loc = myGrid.getLocationByCoordinates(2,2);
 		entityManager.setLocation(droidno2, loc);
 		
