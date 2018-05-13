@@ -81,8 +81,8 @@ public class Leave extends SWAffordance {
 	/**
 	 * A String describing what this action will do, suitable for display in a user interface
 	 * 
-	 * @author ram
-	 * @return String comprising "take " and the short description of the target of this <code>Take</code>
+	 * @author Kapo Ho and YangCui
+	 * @return String comprising "Leave" and the short description of the target of this <code>Leave</code>
 	 */
 	@Override
 	public String getDescription() {
