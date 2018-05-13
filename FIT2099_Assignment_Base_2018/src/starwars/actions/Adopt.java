@@ -47,10 +47,12 @@ public class Adopt extends SWAffordance {
 				Droid thetarget = (Droid)(target);
 				if (thetarget.getOwner()==null){
 					thetarget.setOwner(a);
+					assert thetarget.getOwner()==a:"Adoption failed!";
 					target.removeAffordance(this);
 				}
 			}
 		}
+		
 	}
 	/**
 	 * A String describing what this action will do, suitable for display in a user interface

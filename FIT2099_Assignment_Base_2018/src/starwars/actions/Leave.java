@@ -74,6 +74,7 @@ public class Leave extends SWAffordance {
 			target.removeAffordance(this);
 			//add the take affordance
 			target.addAffordance(new Take(theItem,this.messageRenderer));
+			assert a.getItemCarried()==null:"Leave failed!";
 
 		}
 	}

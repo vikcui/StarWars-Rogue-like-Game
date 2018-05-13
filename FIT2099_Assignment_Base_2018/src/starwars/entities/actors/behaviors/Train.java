@@ -24,6 +24,8 @@ public class Train {
      * @param </code>SWWorld</code>, a instance of SWWorld used to initialize a new Train object
      */
 	public Train(SWActor a, SWWorld w){
+		assert a instanceof SWActor:"a should be of type SWActor";
+		assert w instanceof SWWorld:"w should be of type SWWrold";
 		this.actor = a;
 		this.world = w;
 	}
@@ -38,6 +40,8 @@ public class Train {
 	 * @param </code>SWWorld</code>
 	 */
 	public void TrainLuke(SWActor a, SWWorld w){
+		assert a instanceof SWActor:"a should be of type SWActor";
+		assert w instanceof SWWorld:"w should be of type SWWrold";
 		SWLocation location = w.getEntityManager().whereIs(a);
 		EntityManager<SWEntityInterface, SWLocation> em = w.getEntityManager();	
 		List<SWEntityInterface> entities = em.contents(location);
@@ -48,6 +52,7 @@ public class Train {
 					((Player) e).setForcestate(((Player) e).getFullForce());
 					a.say("Ben says: After trainning, the force ability of luke becomes strong and he is able to take the lightsaber !");
 					a.say("Luke's forcestate: "+(((Player) e).getForcestate()));
+					assert ((Player) e).getForcestate()==((Player) e).getFullForce():"a should be of type SWActor";
 				}
 				
 			}
