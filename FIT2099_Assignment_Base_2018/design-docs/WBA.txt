@@ -7,6 +7,8 @@ KA PO HO 26989433
 
 
 Work BreakDown:
+
+Assignment1&2:
 YANG CUI  27346919 will be responsible for the UML models, Sequence diagrams of the first three project requirments that includes: Leave Affordace, Force and Lightsaber.
 
 YANG CUI  27346919 will be responsible for the codings of the first three project requirments that includes: Leave Affordace, Force and Lightsaber.
@@ -32,3 +34,13 @@ YANG CUI and KA PO HO will both be responsible for the currentness of versions o
 
 YANG CUI and KA PO HO will make sure the everything is in its current version and final version is there by the due date.
 
+
+Assignment 3:
+
+YANG CUI 27346919 will be responsible for the first requirement Make Reservoirs damageable including code,UML,Interaction diagram and Rationale.
+
+KA PO HO 26989433 will be responsible for the second requirement Grenade including code,UML,Interaction diagram and Rationale.
+
+YANG CUI 27346919 and KA PO HO 26989433 will both be responsible for the third requirement Jawa Sandcrawler including code,UML,Interaction diagram and Rationale.
+
+YANG CUI and KA PO HO will make sure the everything is in its current version and final version is there by the due date.
