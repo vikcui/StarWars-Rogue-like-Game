@@ -1,6 +1,7 @@
 package starwars.entities;
 
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
+import starwars.Capability;
 import starwars.SWAffordance;
 import starwars.SWEntity;
 import starwars.actions.Dip;
@@ -34,6 +35,8 @@ public class Reservoir extends SWEntity {
 		super(m);
 		SWAffordance dip = new Dip(this, m);
 		this.addAffordance(dip);	
+		//set the default hit points to 40
+		this.hitpoints=40;
 		
 		this.setLongDescription("a water reservoir.");
 		this.setShortDescription("a water reservoir, full of cool, clear, refreshing water");
@@ -48,4 +51,42 @@ public class Reservoir extends SWEntity {
 	public String getLongDescription() {
 		return longDescription;
 	}
+	
+	/**
+	 * This method determines if the Descriptions has already been changed
+	 * @return true if they have, false otherwise
+	 */
+	private boolean descriptionChanged(){
+		return (this.getShortDescription().equals("a water reservoir.")&&this.getLongDescription().equals("a water reservoir, full of cool, clear, refreshing water"));
+		
+	}
+
+	@Override
+	/**This method call the super class's takeDamage method and change the decriptions and symbols if needed. 
+	 * 
+	 */
+	public void takeDamage(int damage) {
+		super.takeDamage(damage);
+		
+		if (this.hitpoints<=20&&this.hitpoints>0) {
+			if (!this.descriptionChanged()){
+				//set the short&long Descriptions
+				this.setShortDescription("a damaged water reservoir");
+				this.setLongDescription("a damaged water reservoir, leaking slowly");
+				//set the symbol to V
+				this.setSymbol("V");
+			}
+		}
+		else if (this.hitpoints<=0) {
+			if (!this.descriptionChanged()){
+				//set the short&long Descriptions
+				this.setShortDescription("the wreck-age of a water reservoir");
+				this.setLongDescription("the wreckage of a water reservoir, surrounded by slightly damp soil");
+				//set the symbol to X
+				this.setSymbol("X");
+				//remove the dip affordance
+				this.removeAffordance(new Dip(this, this.messageRenderer));	
+			}
+		}
+	} 
 }

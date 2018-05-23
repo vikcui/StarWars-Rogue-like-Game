@@ -28,6 +28,8 @@ public class SWWorld extends World {
 	 */
 	private SWGrid myGrid;
 	
+	private SWGrid interiorGrid;
+	
 	/**The entity manager of the world which keeps track of <code>SWEntities</code> and their <code>SWLocation</code>s*/
 	private static final EntityManager<SWEntityInterface, SWLocation> entityManager = new EntityManager<SWEntityInterface, SWLocation>();
 	
@@ -38,8 +40,18 @@ public class SWWorld extends World {
 	public SWWorld() {
 		SWLocation.SWLocationMaker factory = SWLocation.getMaker();
 		myGrid = new SWGrid(factory);
+		interiorGrid=new SWGrid(factory);
 		space = myGrid;
 		
+	}
+	public SWGrid getInteriorGrid() {
+		return interiorGrid;
+	}
+	public int heightInterior() {
+		return interiorGrid.getHeight();
+	}
+	public int widthInterior() {
+		return interiorGrid.getWidth();
 	}
 
 	/** 
@@ -193,6 +205,27 @@ public class SWWorld extends World {
 		tim.setSymbol("∞");
 		loc = myGrid.getLocationByCoordinates(4,3);
 		entityManager.setLocation(tim, loc);
+		
+		//the door for the interior grid
+		loc = interiorGrid.getLocationByCoordinates(4,3);
+		loc.setSymbol('d');
+
+		Grenade g = new Grenade(iface);
+		g.setSymbol("g");
+		loc = myGrid.getLocationByCoordinates(5, 8);
+		entityManager.setLocation(g, loc);
+		
+		Grenade g1 = new Grenade(iface);
+		g1.setSymbol("g1");
+		loc = myGrid.getLocationByCoordinates(5, 7);
+		entityManager.setLocation(g1, loc);
+		
+		Sandcrawler sc = new Sandcrawler(Team.GOOD,100,iface,this,patrolmoves);
+		sc.setSymbol("sc");
+		loc = myGrid.getLocationByCoordinates(2, 2);
+		entityManager.setLocation(sc, loc);
+		
+
 
 	}
 

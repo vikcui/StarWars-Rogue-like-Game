@@ -31,6 +31,9 @@ public class SWGridTextInterface implements GridRenderer {
 	/**The grid of the world*/
 	private static SWGrid grid;
 	
+	/**The grid of the interior world*/
+	private static SWGrid interiorGrid;
+	
 	/**If or not to show the banner*/
 	private static boolean showBanner;
 	
@@ -43,8 +46,9 @@ public class SWGridTextInterface implements GridRenderer {
 	 * @param 	grid the grid of the world
 	 * @pre 	grid should not be null 
 	 */
-	public SWGridTextInterface(SWGrid grid) {
+	public SWGridTextInterface(SWGrid grid,SWGrid newInteriorGrid) {
 		SWGridTextInterface.grid = grid;
+		this.interiorGrid=newInteriorGrid;
 		instream = new Scanner(System.in);
 		//set the show banner to true so that the banner would be displayed on the first map render
 		showBanner = true;
@@ -145,25 +149,34 @@ public class SWGridTextInterface implements GridRenderer {
 		if (showBanner) {
 			showBanner();
 		}
-				
+		//get grid for the world
+		String Grid1=this.displaymapgeneral(this.grid);
+		//get grid for the interior world 
+		String Grid2=this.displaymapgeneral(this.interiorGrid);
+		//combine them 
+		String buffer=Grid1+Grid2;
+
+		System.out.println(buffer); //print the grid on the screen
+		
+	}
+	private String displaymapgeneral(SWGrid initGrid){
+		
 		String buffer = "\n";
-		final int gridHeight = grid.getHeight();
-		final int gridWidth  = grid.getWidth();
+		final int gridHeight = initGrid.getHeight();
+		final int gridWidth  = initGrid.getWidth();
 		
 	
 		for (int row = 0; row< gridHeight; row++){ //for each row
 			for (int col = 0; col< gridWidth; col++){ //each column of a row
 				
-				SWLocation loc = (SWLocation) grid.getLocationByCoordinates(col, row);
+				SWLocation loc = (SWLocation) initGrid.getLocationByCoordinates(col, row);
 				
 				//construct the string of a location to be displayed on the text interface
 				buffer = buffer + "|"+ getLocationString(loc)+"| ";
 			}
 			buffer += "\n"; //new row
 		}
-		
-		System.out.println(buffer); //print the grid on the screen
-		
+		return buffer;
 	}
 
 	@Override

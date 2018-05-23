@@ -13,6 +13,9 @@ import edu.monash.fit2099.gridworld.Grid.CompassBearing;
  *
  */
 public class RandomDirection {
+	public RandomDirection(){
+		
+	}
 	/**
 	 * There are three attributes in the class: rand, randNum and d.
 	 * rand and randNum both are used to create a random number.

@@ -29,7 +29,7 @@ public class SWGridController implements GridController {
 	
 	/**SWgrid of the world*/
 	private SWGrid grid;
-	
+	private SWGrid Interiorgrid;
 	/**
 	 * Constructor of this <code>SWGridController</code>
 	 * <p>
@@ -42,9 +42,9 @@ public class SWGridController implements GridController {
 	 */
 	public SWGridController(SWWorld world) {
 		this.grid = world.getGrid();
-		
+		this.Interiorgrid=world.getInteriorGrid();
 		//change the user interface to be used here in the constructor
-		SWGridController.ui = new SWGridTextInterface(this.grid); //use a Text Interface to interact
+		SWGridController.ui = new SWGridTextInterface(this.grid, this.Interiorgrid); //use a Text Interface to interact
 		//this.ui = new SWGridBasicGUI(this.grid); //Use a Basic GUI to interact
 		//this.ui = new SWGridGUI(this.grid); //Use a GUI with better graphics to interact
 	}
