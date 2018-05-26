@@ -62,13 +62,12 @@ public class Sandcrawler extends SWActor {
 		}
 		
 		List<SWEntityInterface> entitiesAtDoor = em.contents((this.world.getInteriorGrid()).getLocationByCoordinates(4,3));
-		if (entitiesAtDoor!=null){
-			for (SWEntityInterface e : entitiesAtDoor){
-				if (((SWActor)e).canUseForce()){
-					em.remove(e);
-					SWLocation loc=em.whereIs(this);
-					em.setLocation(e, loc);
-				}
+		
+		for (SWEntityInterface e : entitiesAtDoor){
+			if (((SWActor)e).canUseForce()){
+				em.remove(e);
+				SWLocation loc=em.whereIs(this);
+				em.setLocation(e, loc);
 			}
 		}
 			

@@ -43,49 +43,41 @@ public class Throw extends SWAffordance implements SWActionInterface {
 			for (CompassBearing d:CompassBearing.values()){
 				directions.add(d);
 			}
-			a.say(directions.toString());
 			// location where the Grenade exploded
 			SWLocation locationGrenade =em.whereIs(a);
 			//entities at the same location take damage of 20 hit points(maxExplosion)
 			List<SWEntityInterface> entities = em.contents(em.whereIs(a));
+	
 			for (SWEntityInterface e : entities){
 				if(e != a){
 					e.takeDamage(this.maxExplosion);
 				}
 			}
-			System.out.println(locationGrenade.getNeighbour(directions.get(0))==null);
-			
 			for (CompassBearing d:directions){
-				System.out.println(d);
-				List<SWEntityInterface> entities1 = em.contents( (SWLocation) locationGrenade.getNeighbour(d));
-				List<SWEntityInterface> entities2 = em.contents((SWLocation) ((SWLocation) em.whereIs(a).getNeighbour(d)).getNeighbour(d));
-				if (entities1!=null){
-					
-				
+				List<SWEntityInterface> entities1 = em.contents((SWLocation) locationGrenade.getNeighbour(d));
+				List<SWEntityInterface> entities2 = em.contents((SWLocation) ((SWLocation) locationGrenade.getNeighbour(d)).getNeighbour(d));
 				// entities at the location that can be reached in q step 
 				// take damage of 20 hit points(maxExplosion)
+				if (entities1!=null){
 					for (SWEntityInterface e1 : entities1){
 							e1.takeDamage(this.intermidiateExplosion);
-					
 					}
 				}
 				if (entities2!=null){
 					for (SWEntityInterface e2 : entities2){
-							e2.takeDamage(this.minExplosion);
+						e2.takeDamage(this.minExplosion);
 					}
 				}
 			}
 			//make the Grenade disappear
 			a.setItemCarried(null);
-			//make the Grenade disappear on map
-			
 		}
 	}
 
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return "Throw" + target.getShortDescription();
+		return "Throw " + target.getShortDescription();
 	}
 
 }

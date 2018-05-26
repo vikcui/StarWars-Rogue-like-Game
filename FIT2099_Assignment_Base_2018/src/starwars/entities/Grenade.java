@@ -21,6 +21,7 @@ public class Grenade extends SWEntity {
  */
 	public Grenade(MessageRenderer m) {
 		super(m);
+		
 		this.shortDescription="This is a Grenade";
 		this.shortDescription="This is a Grenade that potentially has a lot of power!";
 		this.addAffordance(new Take(this,this.messageRenderer));

@@ -88,7 +88,6 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		super(m);
 		actions = new HashSet<SWActionInterface>();
 		this.team = team;
-		assert hitpoints >= 0 : "the hitspoints should be greater or equal than 0";
 		this.hitpoints = hitpoints;
 		this.world = world;
 		this.symbol = "@";
