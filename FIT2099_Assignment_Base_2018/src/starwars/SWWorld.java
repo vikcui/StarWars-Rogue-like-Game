@@ -27,7 +27,7 @@ public class SWWorld extends World {
 	 * <code>SWGrid</code> of this <code>SWWorld</code>
 	 */
 	private SWGrid myGrid;
-	
+	/**the interiorGrid of this world**/
 	private SWGrid interiorGrid;
 	
 	/**The entity manager of the world which keeps track of <code>SWEntities</code> and their <code>SWLocation</code>s*/
@@ -44,12 +44,27 @@ public class SWWorld extends World {
 		space = myGrid;
 		
 	}
+	/**This method is an accessor for the SWGrid attribute interiorGrid
+	 * 
+	 * @return SWGrid attribute interiorGrid
+	 */
+	
 	public SWGrid getInteriorGrid() {
 		return interiorGrid;
 	}
+	
+	/**This method is an accessor for the int attribute height of the SWGrid attribute interiorGrid
+	 * 
+	 * @return int attribute height of the SWGrid attribute interiorGrid
+	 */
 	public int heightInterior() {
 		return interiorGrid.getHeight();
 	}
+	
+	/**This method is an accessor for the int attribute width of the SWGrid attribute interiorGrid
+	 * 
+	 * @return int attribute width of the SWGrid attribute interiorGrid
+	 */
 	public int widthInterior() {
 		return interiorGrid.getWidth();
 	}

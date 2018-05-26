@@ -29,6 +29,7 @@ public class SWGridController implements GridController {
 	
 	/**SWgrid of the world*/
 	private SWGrid grid;
+	/**interiorGrid of the world*/
 	private SWGrid Interiorgrid;
 	/**
 	 * Constructor of this <code>SWGridController</code>
