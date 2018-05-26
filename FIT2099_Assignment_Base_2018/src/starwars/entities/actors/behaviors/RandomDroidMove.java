@@ -5,7 +5,6 @@ import edu.monash.fit2099.gridworld.Grid;
 import edu.monash.fit2099.gridworld.Grid.CompassBearing;
 import edu.monash.fit2099.simulator.matter.EntityManager;
 import edu.monash.fit2099.simulator.space.Direction;
-import starwars.RandomDirection;
 import starwars.SWEntityInterface;
 import starwars.SWLocation;
 import starwars.SWWorld;
@@ -62,8 +61,9 @@ public class RandomDroidMove {
 
 		if (moves.size()==0){
 			
-			RandomDirection rd = new RandomDirection();
-			Grid.CompassBearing nextRD = rd.convertNumCompass();
+//			RandomDirection rd = new RandomDirection();
+//			Grid.CompassBearing nextRD = rd.convertNumCompass();
+			Grid.CompassBearing nextRD = CompassBearing.getRandomBearing();
 			for(int i=0;i<maxLength;i++){
 				this.moves.add(nextRD);
 			}	
@@ -72,8 +72,9 @@ public class RandomDroidMove {
 		while (!(this.myWorld.getEntityManager().seesExit(d,this.moves.get(position)))){
 			this.moves.clear();
 			this.position=0;
-			RandomDirection rd = new RandomDirection();
-			Grid.CompassBearing nextRD = rd.convertNumCompass();
+//			RandomDirection rd = new RandomDirection();
+//			Grid.CompassBearing nextRD = rd.convertNumCompass();
+			Grid.CompassBearing nextRD = CompassBearing.getRandomBearing();
 			for(int i=0;i<maxLength;i++){
 				this.moves.add(nextRD);
 			}	
