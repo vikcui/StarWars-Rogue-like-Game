@@ -1,6 +1,8 @@
 package starwars.entities.actors;
 
 
+import java.util.Random;
+
 import edu.monash.fit2099.gridworld.Grid;
 import edu.monash.fit2099.simulator.matter.Affordance;
 import edu.monash.fit2099.simulator.matter.EntityManager;
@@ -163,7 +165,4 @@ public class Droid extends SWActor {
 	
 		
 	}
-
-
-
 }

@@ -46,39 +46,32 @@ public class Sandcrawler extends SWActor {
 		List<SWEntityInterface> entities = em.contents(em.whereIs(this));
 		for (SWEntityInterface e : entities){
 			if(e instanceof Droid){
-				Random random = new Random();
-				SWLocation loc=(this.world.getInteriorGrid()).getLocationByCoordinates(random.nextInt(8),random.nextInt(8));
-				em.remove(e);
-				em.setLocation(e, loc);
+				this.setInterior(e, em);
 			}
-			else if (e instanceof Player){
+			else if (e instanceof SWActor){
 				if (((SWActor)e).canUseForce()){
-					Random random = new Random();
-					SWLocation loc=(this.world.getInteriorGrid()).getLocationByCoordinates(random.nextInt(8),random.nextInt(8));
-					em.remove(e);
-					em.setLocation(e, loc);
+					this.setInterior(e, em);
 				}
 			}
 		}
 		
 		List<SWEntityInterface> entitiesAtDoor = em.contents((this.world.getInteriorGrid()).getLocationByCoordinates(4,3));
-		
-		for (SWEntityInterface e : entitiesAtDoor){
-			if (((SWActor)e).canUseForce()){
-				em.remove(e);
-				SWLocation loc=em.whereIs(this);
-				em.setLocation(e, loc);
+		if (entitiesAtDoor!=null){
+			for (SWEntityInterface e : entitiesAtDoor){
+				if (((SWActor)e).canUseForce()){
+					em.remove(e);
+					SWLocation loc=em.whereIs(this);
+					em.setLocation(e, loc);
+				}
 			}
 		}
 			
 		// TODO Auto-generated method stub
 		if (this.decisonarray.get(0)==decision1){
-			this.decisonarray.remove(0);
-			this.decisonarray.add(decision1);
+			this.alternateDecisionArray(decision1);
 
 		}else{
-			this.decisonarray.remove(0);
-			this.decisonarray.add(decision2);
+			this.alternateDecisionArray(decision2);
 			//schedule for move
 			Direction newdirection = path.getNext();
 			say(getShortDescription() + " moves " + newdirection);
@@ -87,5 +80,17 @@ public class Sandcrawler extends SWActor {
 			}
 		
 		}
+	private void setInterior(SWEntityInterface newSWEntityInterface,EntityManager<SWEntityInterface, SWLocation> newEntityManager){
+		Random random = new Random();
+		SWLocation loc=(this.world.getInteriorGrid()).getLocationByCoordinates(random.nextInt(8),random.nextInt(8));
+		newEntityManager.remove(newSWEntityInterface);
+		newEntityManager.setLocation(newSWEntityInterface, loc);
+		}
+	
+	private void alternateDecisionArray(int newInteger){
+		this.decisonarray.remove(0);
+		this.decisonarray.add(newInteger);
+		
+	}
 
 	}

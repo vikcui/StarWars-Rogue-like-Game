@@ -17,7 +17,12 @@ import starwars.actions.Dip;
  * @see {@link starwars.actions.Fill} 
  */
 public class Reservoir extends SWEntity {
-
+	
+	//hippoints=0 means the actor is no longer alive thus the status needed changed.
+	final int deadHitPoints=0;
+	//hippoints=20 is the threshold </code>Reservoir</code> to change its status.
+	final int ChangeHitPoints=20;
+	
 	/**
 	 * Constructor for the <code>Reservoir</code> class. This constructor will,
 	 * <ul>
@@ -37,6 +42,7 @@ public class Reservoir extends SWEntity {
 		this.addAffordance(dip);	
 		//set the default hit points to 40
 		this.hitpoints=40;
+		
 		
 		this.setLongDescription("a water reservoir.");
 		this.setShortDescription("a water reservoir, full of cool, clear, refreshing water");
@@ -68,7 +74,7 @@ public class Reservoir extends SWEntity {
 	public void takeDamage(int damage) {
 		super.takeDamage(damage);
 		
-		if (this.hitpoints<=20&&this.hitpoints>0) {
+		if (this.hitpoints<=this.ChangeHitPoints&&this.hitpoints>this.deadHitPoints) {
 			if (!this.descriptionChanged()){
 				//set the short&long Descriptions
 				this.setShortDescription("a damaged water reservoir");
@@ -77,7 +83,7 @@ public class Reservoir extends SWEntity {
 				this.setSymbol("V");
 			}
 		}
-		else if (this.hitpoints<=0) {
+		else if (this.hitpoints<=this.deadHitPoints) {
 			if (!this.descriptionChanged()){
 				//set the short&long Descriptions
 				this.setShortDescription("the wreck-age of a water reservoir");

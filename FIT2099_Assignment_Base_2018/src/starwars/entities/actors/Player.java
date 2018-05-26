@@ -2,6 +2,7 @@ package starwars.entities.actors;
 
 
 import java.util.List;
+import java.util.Random;
 
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.SWActor;
@@ -99,4 +100,6 @@ public class Player extends SWActor {
 			}
 		}
 	}
+
+
 }

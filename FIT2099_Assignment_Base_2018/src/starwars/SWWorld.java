@@ -210,7 +210,20 @@ public class SWWorld extends World {
 		loc = interiorGrid.getLocationByCoordinates(4,3);
 		loc.setSymbol('d');
 
-
+		Grenade g = new Grenade(iface);
+		g.setSymbol("g");
+		loc = myGrid.getLocationByCoordinates(5, 8);
+		entityManager.setLocation(g, loc);
+		
+		Grenade g1 = new Grenade(iface);
+		g1.setSymbol("g1");
+		loc = myGrid.getLocationByCoordinates(5, 7);
+		entityManager.setLocation(g1, loc);
+		
+		Sandcrawler sc = new Sandcrawler(Team.GOOD,100,iface,this,patrolmoves);
+		sc.setSymbol("sc");
+		loc = myGrid.getLocationByCoordinates(2, 2);
+		entityManager.setLocation(sc, loc);
 		
 
 

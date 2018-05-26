@@ -17,6 +17,7 @@ package starwars;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
 
 import edu.monash.fit2099.gridworld.Grid.CompassBearing;
 import edu.monash.fit2099.simulator.matter.Actor;
@@ -317,10 +318,6 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	 */
 	public int getStrongForce(){
 		return this.strongforce;
-	}
-
-
-	
-	
+	}	
 	
 }
