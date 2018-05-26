@@ -14,3 +14,6 @@ This affordance allows a player to adpot a droid when they meets. The details wo
 2.The actor to adopt the droid should be an instance of player only.
 3.we also need to ensure that the droid currently doesn't have a owner, and set the owner for the droid and remove the adopt affordance correspondingly.
  
+
+ASSIGMENT 3:
+For the new features of the assignmnet3, we store it in a new word document called A3_rationale.
