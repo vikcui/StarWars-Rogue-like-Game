@@ -68,8 +68,9 @@ public class Reservoir extends SWEntity {
 	}
 
 	@Override
-	/**This method call the super class's takeDamage method and change the decriptions and symbols if needed. 
-	 * 
+	/**This method call the super class's takeDamage method
+	 *  and change the decriptions and symbols if needed. 
+	 * @param: damage, an int attribute representating the how much damage.
 	 */
 	public void takeDamage(int damage) {
 		super.takeDamage(damage);
