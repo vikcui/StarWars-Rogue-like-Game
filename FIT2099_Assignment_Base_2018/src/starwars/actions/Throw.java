@@ -92,7 +92,6 @@ public class Throw extends SWAffordance implements SWActionInterface {
 			}
 			
 			for (CompassBearing d:directions){
-				System.out.println(d);
 				List<SWEntityInterface> entities1 = em.contents( (SWLocation) locationGrenade.getNeighbour(d));
 				List<SWEntityInterface> entities2 = em.contents((SWLocation) ((SWLocation) em.whereIs(a).getNeighbour(d)).getNeighbour(d));
 				if (entities1!=null){

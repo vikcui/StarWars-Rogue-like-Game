@@ -39,8 +39,12 @@ public class RandomDroidMove {
 	
 	/**
 	 * This class is used to get the next position that the droid should move.
-	 * As the droid should get a random direction first and keep moving at that position until it hit the wall(function seeExit() can guarantee that the droid should always move into the place that has neighbors)
-	 * After the droid hit the wall, get a new Ramdom direction one that will not lead to Driod hitting the wall.
+	 * Initially, the droid pick a random direction by getRandomBearing() in the Grid.CompassBearing class,
+	 * and keep moving in that position until it finds its owner. 
+	 * The seesExit() can ensure the droid always move to position that is a safe position. 
+	 * Therefore, we utilize a while loop and seeExits() method to check whether the droid no longer move in its current direction or not, 
+	 * if it is, then keep getting random position, and the while loop will only stop when the random position is a safe position. 
+	 * Then we keep moving in this position until we hit the wall again. We repeat this process until the droid find its owner.
 	 * @param </code>d</code>,  
 	 * @return the next direction that the droid needs to move.
 	 */
