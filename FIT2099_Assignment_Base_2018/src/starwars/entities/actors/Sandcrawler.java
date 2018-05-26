@@ -28,6 +28,8 @@ public class Sandcrawler extends SWActor {
 	//decision int attribute representing first out of two turns 
 	static final int decision1=1;
 	//decision int attribute representing second out of two turns 
+	
+	
 	static final int decision2=2;
 	
 	//x coordinate of the door

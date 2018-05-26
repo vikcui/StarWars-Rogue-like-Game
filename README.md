@@ -15,6 +15,11 @@ This affordance allows a player to adpot a droid when they meets. The details wo
 3.we also need to ensure that the droid currently doesn't have a owner, and set the owner for the droid and remove the adopt affordance correspondingly.
  
 
+
+
 ASSIGMENT 3:
 For the new features of the assignmnet3, we store it in a new word document called A3_rationale.
 We have deleted the randomdirection class as there is an existing method in Grid.CompassBearing class called getRandomBearing() has the same functionality.
+
+For feature 4 Assignment 1&2:
+Some changes have been made to DroidRandomMove class, it no longer uses int attribute to get the next direction, it simply uses an Compassbarring attribute to represent the next possible direction. This way, there is fewer lines of code and less dependency.
