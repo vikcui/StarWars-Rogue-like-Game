@@ -60,9 +60,6 @@ public class RandomDroidMove {
 	public CompassBearing getNext(Droid d){
 
 		if (moves.size()==0){
-			
-//			RandomDirection rd = new RandomDirection();
-//			Grid.CompassBearing nextRD = rd.convertNumCompass();
 			Grid.CompassBearing nextRD = CompassBearing.getRandomBearing();
 			for(int i=0;i<maxLength;i++){
 				this.moves.add(nextRD);
@@ -72,8 +69,6 @@ public class RandomDroidMove {
 		while (!(this.myWorld.getEntityManager().seesExit(d,this.moves.get(position)))){
 			this.moves.clear();
 			this.position=0;
-//			RandomDirection rd = new RandomDirection();
-//			Grid.CompassBearing nextRD = rd.convertNumCompass();
 			Grid.CompassBearing nextRD = CompassBearing.getRandomBearing();
 			for(int i=0;i<maxLength;i++){
 				this.moves.add(nextRD);

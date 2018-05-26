@@ -17,3 +17,4 @@ This affordance allows a player to adpot a droid when they meets. The details wo
 
 ASSIGMENT 3:
 For the new features of the assignmnet3, we store it in a new word document called A3_rationale.
+We have deleted the randomdirection class as there is an existing method in Grid.CompassBearing class called getRandomBearing() has the same functionality.

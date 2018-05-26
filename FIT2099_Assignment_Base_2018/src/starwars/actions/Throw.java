@@ -81,7 +81,6 @@ public class Throw extends SWAffordance implements SWActionInterface {
 			for (CompassBearing d:CompassBearing.values()){
 				directions.add(d);
 			}
-			a.say(directions.toString());
 			// location where the Grenade exploded
 			SWLocation locationGrenade =em.whereIs(a);
 			//entities at the same location take damage of 20 hit points(maxExplosion)
@@ -91,7 +90,6 @@ public class Throw extends SWAffordance implements SWActionInterface {
 					e.takeDamage(this.maxExplosion);
 				}
 			}
-			System.out.println(locationGrenade.getNeighbour(directions.get(0))==null);
 			
 			for (CompassBearing d:directions){
 				System.out.println(d);
