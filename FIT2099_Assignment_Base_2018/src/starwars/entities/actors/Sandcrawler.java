@@ -30,8 +30,9 @@ public class Sandcrawler extends SWActor {
 	//decision int attribute representing second out of two turns 
 	static final int decision2=2;
 	
+	//x coordinate of the door
 	static final int door_x = 4;
-	
+	//y coordinate of the door
 	static final int door_y = 3;
 	
 	//decision Type Patrol attribute used to store the movements that </code>Sandcrawler</code> follows
