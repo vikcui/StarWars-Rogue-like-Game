@@ -1,14 +1,9 @@
 package starwars.entities.actors.behaviors;
 
-import java.util.ArrayList;
-import edu.monash.fit2099.gridworld.Grid;
+
+
 import edu.monash.fit2099.gridworld.Grid.CompassBearing;
-import edu.monash.fit2099.simulator.matter.EntityManager;
-import edu.monash.fit2099.simulator.space.Direction;
-import starwars.SWEntityInterface;
-import starwars.SWLocation;
 import starwars.SWWorld;
-import starwars.actions.Move;
 import starwars.entities.actors.Droid;
 
 /*
@@ -29,9 +24,8 @@ public class RandomDroidMove {
 	 * keep moving until it reach the wall (this can use the maxlength to make sure it will not move out the wall)
 	 */
 	private SWWorld myWorld;
-	private int maxLength;
-	private ArrayList<CompassBearing> moves;
-	private int position = 0;
+	// the next possible direction to move
+	private CompassBearing moves;
 
 	
 	/**
@@ -40,43 +34,26 @@ public class RandomDroidMove {
 	 * @param  </code>world </code>, a word object of SWWordld to represent the position of Droid in the world.
 	 */
 	public RandomDroidMove(SWWorld world){
-		this.myWorld=world;
-		this.maxLength=Math.max(myWorld.height(), myWorld.width());
-//		for(int i=0;i<maxLength;i++){
-//			this.moves.add(newCompassBearing);
-		this.moves=new ArrayList<CompassBearing>();
-		
-//		}
-		
+		this.myWorld=world;	
 	}
 	
 	/**
 	 * This class is used to get the next position that the droid should move.
 	 * As the droid should get a random direction first and keep moving at that position until it hit the wall(function seeExit() can guarantee that the droid should always move into the place that has neighbors)
-	 * After the droid hit the wall, we clear the moves arrayList and repeat the process above.
+	 * After the droid hit the wall, get a new Ramdom direction one that will not lead to Driod hitting the wall.
 	 * @param </code>d</code>,  
 	 * @return the next direction that the droid needs to move.
 	 */
 	public CompassBearing getNext(Droid d){
 
-		if (moves.size()==0){
-			Grid.CompassBearing nextRD = CompassBearing.getRandomBearing();
-			for(int i=0;i<maxLength;i++){
-				this.moves.add(nextRD);
-			}	
-			
+		if (moves==null){
+			moves = CompassBearing.getRandomBearing();
 		}
-		while (!(this.myWorld.getEntityManager().seesExit(d,this.moves.get(position)))){
-			this.moves.clear();
-			this.position=0;
-			Grid.CompassBearing nextRD = CompassBearing.getRandomBearing();
-			for(int i=0;i<maxLength;i++){
-				this.moves.add(nextRD);
-			}	
+
+		while (!(this.myWorld.getEntityManager().seesExit(d,this.moves))){
+			moves= CompassBearing.getRandomBearing();
 		}
-		CompassBearing nextMove=moves.get(position);
-		position++;
-		return nextMove;
+		return moves;
 			
 	
 		}
