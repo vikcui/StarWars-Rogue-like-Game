@@ -29,11 +29,16 @@ public class Sandcrawler extends SWActor {
 	static final int decision1=1;
 	//decision int attribute representing second out of two turns 
 	static final int decision2=2;
-	//decision Type Patril attribute used to store the movements that </code>Sandcrawler</code> follows
+	
+	static final int door_x = 4;
+	
+	static final int door_y = 3;
+	
+	//decision Type Patrol attribute used to store the movements that </code>Sandcrawler</code> follows
 	private Patrol path;
 	// SWGrid type attribute representing the interior grid inside the </code>Sandcrawler</code>
 	private SWGrid interiorGrid;
-
+	
 	/**
 	 * Construtor which creates and initialize an </code>Sandcrawler</code> object.
 	 * 
@@ -82,7 +87,7 @@ public class Sandcrawler extends SWActor {
 			}
 		}
 		
-		List<SWEntityInterface> entitiesAtDoor = em.contents((this.world.getInteriorGrid()).getLocationByCoordinates(4,3));
+		List<SWEntityInterface> entitiesAtDoor = em.contents((this.world.getInteriorGrid()).getLocationByCoordinates(door_x,door_y));
 		if (entitiesAtDoor!=null){
 			for (SWEntityInterface e : entitiesAtDoor){
 				if (((SWActor)e).canUseForce()){
