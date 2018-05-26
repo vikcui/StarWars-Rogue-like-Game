@@ -69,7 +69,7 @@ public class Sandcrawler extends SWActor {
 	 * be taken into the interoir grid by calling the </code>setInterior</code> method. 
 	 * After that,the method will collect all the SWEntityInterface entities that is the same location as the door symble'd' if there 
 	 * is SWActor with enough force in it , the actor will be taken out of the interior grid and put back into the original grid.
-	 * After all that, the method will check if it is still alive, if  </code>Sandcrawler</code> is, then move otherwise stay.
+	 * After all that, the method will check if it is still alive, if  </code>Sandcrawler</code> is, then move otherwise stay
 	 * by calling the method alternateDecisionArray.
 	 */
 
