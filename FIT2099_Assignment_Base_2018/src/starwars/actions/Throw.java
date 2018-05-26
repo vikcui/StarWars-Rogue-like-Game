@@ -19,7 +19,7 @@ public class Throw extends SWAffordance implements SWActionInterface {
 	
 	
 	static final int maxExplosion=20;
-	static final int intermidiateExplosion=10;
+	static final int intermediateExplosion=10;
 	static final int minExplosion=5;
 
 	public Throw(SWEntityInterface theTarget, MessageRenderer m) {
@@ -65,7 +65,7 @@ public class Throw extends SWAffordance implements SWActionInterface {
 				// entities at the location that can be reached in q step 
 				// take damage of 20 hit points(maxExplosion)
 					for (SWEntityInterface e1 : entities1){
-							e1.takeDamage(this.intermidiateExplosion);
+							e1.takeDamage(this.intermediateExplosion);
 					
 					}
 				}

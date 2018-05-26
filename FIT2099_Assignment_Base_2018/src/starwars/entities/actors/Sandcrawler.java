@@ -24,7 +24,7 @@ import java.util.Random;
 public class Sandcrawler extends SWActor {
 	
 	//decision array used alternate between two scenarios 
-	ArrayList<Integer> decisonarray=new ArrayList<Integer>();
+	ArrayList<Integer> decisionarray=new ArrayList<Integer>();
 	//decision int attribute representing first out of two turns 
 	static final int decision1=1;
 	//decision int attribute representing second out of two turns 
@@ -51,8 +51,8 @@ public class Sandcrawler extends SWActor {
 	 */
 	public Sandcrawler(Team team, int hitpoints, MessageRenderer m, SWWorld world,Direction [] moves) {
 		super(team, hitpoints, m, world);
-		this.decisonarray.add(decision1);
-		this.decisonarray.add(decision2);
+		this.decisionarray.add(decision1);
+		this.decisionarray.add(decision2);
 		path = new Patrol(moves);
 		this.setShortDescription("sandcrawler");
 		this.setLongDescription("vehicles that Jawas travel in");
@@ -100,7 +100,7 @@ public class Sandcrawler extends SWActor {
 		}
 		if (this.getHitpoints()>0){	
 		// TODO Auto-generated method stub
-			if (this.decisonarray.get(0)==decision1){
+			if (this.decisionarray.get(0)==decision1){
 				this.alternateDecisionArray(decision1);
 	
 			}else{
@@ -131,8 +131,8 @@ public class Sandcrawler extends SWActor {
 	 * @param newInteger the decision integer used at a particular turn.
 	 */
 	private void alternateDecisionArray(int newInteger){
-		this.decisonarray.remove(0);
-		this.decisonarray.add(newInteger);
+		this.decisionarray.remove(0);
+		this.decisionarray.add(newInteger);
 		
 	}
 
