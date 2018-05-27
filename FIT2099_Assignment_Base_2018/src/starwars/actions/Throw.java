@@ -92,7 +92,6 @@ public class Throw extends SWAffordance implements SWActionInterface {
 			}
 			
 			for (CompassBearing d:directions){
-				System.out.println(d);
 				if ((SWLocation) locationGrenade.getNeighbour(d)!=null){
 					List<SWEntityInterface> entities1 = em.contents( (SWLocation) locationGrenade.getNeighbour(d));
 					if (entities1!=null){
@@ -136,7 +135,7 @@ public class Throw extends SWAffordance implements SWActionInterface {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return "Throw" + target.getShortDescription();
+		return "Throw " + target.getShortDescription();
 	}
 
 }
