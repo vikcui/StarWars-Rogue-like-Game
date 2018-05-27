@@ -232,8 +232,23 @@ public class SWWorld extends World {
 		
 		Grenade g1 = new Grenade(iface);
 		g1.setSymbol("g1");
-		loc = myGrid.getLocationByCoordinates(5, 7);
+		loc = myGrid.getLocationByCoordinates(1, 8);
 		entityManager.setLocation(g1, loc);
+		
+		Grenade g2 = new Grenade(iface);
+		g2.setSymbol("g2");
+		loc = myGrid.getLocationByCoordinates(2, 0);
+		entityManager.setLocation(g2, loc);
+		
+		Grenade g3 = new Grenade(iface);
+		g3.setSymbol("g3");
+		loc = myGrid.getLocationByCoordinates(3, 4);
+		entityManager.setLocation(g3, loc);
+		
+		Grenade g4 = new Grenade(iface);
+		g4.setSymbol("g4");
+		loc = myGrid.getLocationByCoordinates(3, 0);
+		entityManager.setLocation(g4, loc);
 		
 		Sandcrawler sc = new Sandcrawler(Team.GOOD,100,iface,this,patrolmoves);
 		sc.setSymbol("sc");

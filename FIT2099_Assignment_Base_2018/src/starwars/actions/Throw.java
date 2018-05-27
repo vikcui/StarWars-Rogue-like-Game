@@ -92,24 +92,34 @@ public class Throw extends SWAffordance implements SWActionInterface {
 			}
 			
 			for (CompassBearing d:directions){
-				List<SWEntityInterface> entities1 = em.contents( (SWLocation) locationGrenade.getNeighbour(d));
-				List<SWEntityInterface> entities2 = em.contents((SWLocation) ((SWLocation) em.whereIs(a).getNeighbour(d)).getNeighbour(d));
-				if (entities1!=null){
-					
-				
+				System.out.println(d);
+				if ((SWLocation) locationGrenade.getNeighbour(d)!=null){
+					List<SWEntityInterface> entities1 = em.contents( (SWLocation) locationGrenade.getNeighbour(d));
+					if (entities1!=null){
+						
+						
 				// entities at the location that can be reached in q step 
 				// take damage of 20 hit points(maxExplosion)
-					for (SWEntityInterface e1 : entities1){
+						for (SWEntityInterface e1 : entities1){
 							e1.takeDamage(this.intermediateExplosion);
-					
+							
+						}
+					}
+					if ((SWLocation) ((SWLocation) em.whereIs(a).getNeighbour(d)).getNeighbour(d)!=null){	
+						
+						List<SWEntityInterface> entities2 = em.contents((SWLocation) ((SWLocation) em.whereIs(a).getNeighbour(d)).getNeighbour(d));
+
+						if (entities2!=null){
+							for (SWEntityInterface e2 : entities2){
+								e2.takeDamage(this.minExplosion);
+							}
+						}
 					}
 				}
-				if (entities2!=null){
-					for (SWEntityInterface e2 : entities2){
-							e2.takeDamage(this.minExplosion);
-					}
-				}
+				
+
 			}
+            		
 			//make the Grenade disappear
 			a.setItemCarried(null);
 			//make the Grenade disappear on map
