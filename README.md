@@ -18,6 +18,13 @@ This affordance allows a player to adpot a droid when they meets. The details wo
 
 
 ASSIGMENT 3:
+
+on the map diplayed, g,g1,g2,g3,g4 are 5 instances of Grendae class
+D1,D2 are the two Driods of which D1 is owned by luke and D2 does not have a owner
+sc represents the instance of Sandcrawler
+
+
+
 For the new features of the assignmnet3, we store it in a new word document called A3_rationale.
 We have deleted the randomdirection class as there is an existing method in Grid.CompassBearing class called getRandomBearing() has the same functionality.
 
